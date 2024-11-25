@@ -191,11 +191,26 @@ def main():
     print("\nModel Performance:")
     print(report)
 
-    # Your test cases here...
     test_cases = [
-        {"message": "You have won a $1000 gift card! Claim it now by providing your details.", "expected": "Spam"},
-        {"message": "Your monthly statement is ready to view in online banking.", "expected": "Ham"}
-    ]
+    {"message": "You have won a $1000 gift card! Claim it now by providing your details.", "expected": "Spam"},
+    {"message": "Your monthly statement is ready to view in online banking.", "expected": "Ham"},
+    
+    # Phishing/Spam
+    {"message": "Urgent: Your account has been suspended. Verify your identity to restore access.", "expected": "Spam"},
+    {"message": "Congratulations! You've won a free vacation. Click here to claim your prize!", "expected": "Spam"},
+    {"message": "Alert: Suspicious activity detected on your account. Click here to secure your account.", "expected": "Spam"},
+    
+    # Legitimate
+    {"message": "Reminder: Your payment is due tomorrow. Please review your recent transactions.", "expected": "Ham"},
+    {"message": "Your password has been successfully updated. If this wasn’t you, reset it immediately.", "expected": "Ham"},
+    {"message": "Your order has been shipped and is on its way!", "expected": "Ham"},
+    
+    
+    {"message": "Important: Your account has been flagged for unusual activity. Please verify your details.", "expected": "Spam"},
+    {"message": "Action required: Your account has been locked. Click here to unlock it.", "expected": "Spam"},
+    {"message": "Security alert: Unusual login attempt detected. Verify your identity now.", "expected": "Spam"}
+]
+
 
     print("\nTest Results:")
     for case in test_cases:
